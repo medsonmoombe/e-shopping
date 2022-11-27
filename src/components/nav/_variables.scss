@@ -1,0 +1,23 @@
+$primary-color: rgb(77, 199, 207);
+$white-color: white;
+$pink-color: rgba(179, 51, 157, 0.897);
+$green-color: rgba(24, 83, 24, 0.952);
+$sidebar-color : rgba(8, 63, 63, 0.767);
+
+@mixin flexContainer($direction, $justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin buttons($color) {
+    width: 80%;
+    padding: 0.7rem;
+    border: none;
+    background: $color;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+}

@@ -1,0 +1,149 @@
+@import "./variables";
+
+header {
+  .nav-bar {
+    @include flexContainer(row, space-around);
+    background: $primary-color;
+    height: 80px;
+    .logo-div {
+      @include flexContainer(row, center);
+      margin-left: 20px;
+      .logo {
+        color: #fff;
+        font-size: 25px;
+        .span {
+          color: $pink-color;
+          font-size: 25px;
+        }
+      }
+    }
+
+    .div-nav {
+      @include flexContainer(row, space-between);
+      gap: 5rem;
+      .list-container {
+        @include flexContainer(row, space-between);
+        list-style: none;
+        gap: 1.5rem;
+        margin-left: 4rem;
+        .logoClose {
+          display: none;
+        }
+        .link-list {
+          color: #fff;
+          transition: 1s ease-in-out;
+          &:hover {
+            color: $pink-color;
+            transition: 1s ease-in-out;
+          }
+        }
+        .link-list-active {
+          color: #fff;
+          font-size: 15px;
+          margin: auto;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .left-div {
+      @include flexContainer(row, space-between);
+      list-style: none;
+      gap: 1.5rem;
+      .link-logs {
+        @include flexContainer(row, space-between);
+        list-style: none;
+        color: #fff;
+        transition: 1s ease-in-out;
+        &:hover {
+          color: $pink-color;
+          transition: 1s ease-in-out;
+        }
+        .cart-num {
+          margin-top: -20px;
+          color: $green-color;
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+    }
+    .humbBtn {
+      display: none;
+      background: $primary-color;
+      border: none;
+      .humb {
+        color: $pink-color;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+      .mobile-div {
+        @include flexContainer(column, flex-start);
+        gap: 1.5rem;
+        height: 100vh;
+        background: $sidebar-color;
+        transform: translateX(0);
+        opacity: 1;
+        position: fixed;
+        width: 50%;
+        padding-top: 5rem;
+        top: 0;
+        left: 0;
+        transition: transform 1s ease-out, visibility 0s;
+        visibility: visible;
+        .list-container {
+          @include flexContainer(column, space-between);
+          gap: 1.5rem;
+          list-style: none;
+          .liStyles {
+             border-bottom: 1px solid $pink-color;
+             width: 100%;
+             @include flexContainer(column, center);
+            .link-list {
+              color: #fff;
+              font-size: 18px;
+              margin: auto;
+              text-decoration: none;
+            }
+          }
+
+          .logoClose {
+            @include flexContainer(row, space-between);
+            gap: 3rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin: auto;
+            background: $primary-color;
+            .close {
+              color: $pink-color;
+              margin-top: -15px;
+            }
+          }
+        }
+        .left-div {
+          @include flexContainer(column, space-between);
+          gap: 1.5rem;
+          .liStyles {
+            border-bottom: 1px solid $pink-color;
+            width: 100%;
+            @include flexContainer(column, center);
+          }
+        }
+      }
+
+      .div-nav {
+        transition: transform 1s ease-out, visibility 1s;
+        opacity: 0;
+        transform: translateX(-200%);
+        visibility: hidden;
+        overflow-x: hidden;
+      }
+
+      .humbBtn {
+        position: fixed;
+        right: 2rem;
+        display: block !important;
+      }
+    }
+}
