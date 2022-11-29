@@ -23,8 +23,7 @@ const Login = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-        const user = userCredential.user;
-        console.log(user);
+        // const user = userCredential.user;
         toast.success("Login successfully");
         setIsLoading(false);
         navigate("/");
@@ -42,8 +41,8 @@ const Login = () => {
   signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const user = result.user;
+    // const credential = GoogleAuthProvider.credentialFromResult(result);
+    // const user = result.user;
     toast.success("Login Successfully");
     navigate("/");
   }).catch((error) => {

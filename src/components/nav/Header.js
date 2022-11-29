@@ -6,11 +6,12 @@ import { leftNav, logo, logout } from "../helper/Helper";
 import styles from "./Header.module.scss";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_USER, SET_ACTIVE_USER } from "../../redux/slice/authSlice";
+import { useDispatch } from "react-redux";
+import { SET_ACTIVE_USER, REMOVE_USER } from "../../redux/slice/authSlice";
+import ShowLoginLinks, { ShowLogoutLinks } from "../hiddenLink/hidden";
 
 const Header = () => {
-  const loggedIn = useSelector((state) => state.auth.isLoggedIn);
+  // const loggedIn = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const [currentUser, setCurrentUser] = useState("");
@@ -45,7 +46,7 @@ const Header = () => {
         dispatch(REMOVE_USER());
       }
     });
-  }, [currentUser, dispatch]);
+  }, []);
 
   return (
     <>
@@ -90,44 +91,39 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
-              <li className={styles.liStyles}>
-                <NavLink
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles["link-list-active"]}`
-                      : `${styles["link-list"]}`
-                  }
-                  to="/orders"
-                >
-                  OrdersHistory
-                </NavLink>
-              </li>
-              <li className={styles.liStyles}>
-                <Link to="#">
-                  <FaUserCircle /> Hi, {currentUser}
-                </Link>
-              </li>
-              {loggedIn && (
+              <ShowLoginLinks>
+                <li className={styles.liStyles}>
+                  <NavLink
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles["link-list-active"]}`
+                        : `${styles["link-list"]}`
+                    }
+                    to="/orders"
+                  >
+                    OrdersHistory
+                  </NavLink>
+                </li>
+              </ShowLoginLinks>
+              <ShowLoginLinks>
+                <li className={styles.liStyles}>
+                  <Link to="#">
+                    <FaUserCircle /> Hi, {currentUser}
+                  </Link>
+                </li>
+              </ShowLoginLinks>
+              <ShowLoginLinks>
                 <li className={styles.liStyles}>
                   <Link to="/" onClick={logout}>
                     logOut
                   </Link>
                 </li>
-              )}
-              {!loggedIn && (
-                <>
-                  <li className={styles.liStyles}>
-                    <Link to="/login" onClick={logout}>
-                      login
-                    </Link>
-                  </li>
-                  <li className={styles.liStyles}>
-                    <Link to="/register" onClick={logout}>
-                      register
-                    </Link>
-                  </li>
-                </>
-              )}
+              </ShowLoginLinks>
+              <ShowLogoutLinks>
+                <li className={styles.liStyles}>
+                  <Link to="/login">login</Link>
+                </li>
+              </ShowLogoutLinks>
             </ul>
             {leftNav}
           </div>
