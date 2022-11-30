@@ -1,0 +1,30 @@
+@import "../nav/variables";
+
+.category-container {
+    @include flexContainer(column, flex-start);
+    width: 15%;
+    padding: 0;
+    h2 {
+        text-align: start;
+        font-size: 2rem;
+        font-weight: 300;
+    }
+    .categoryList {
+        list-style: none;
+        .filterList {
+          border-bottom: 1px solid;
+          font-size: 12px;
+          margin-bottom: 1.2rem;
+          cursor: pointer;
+          display: flex;
+          text-transform: capitalize;
+          &:hover {
+            transition: 0.5s ease-in-out;
+            color: $pink-color;
+          }
+          .catIcon {
+            color: $pink-color;
+          }
+        }
+    }
+}

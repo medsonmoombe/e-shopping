@@ -92,6 +92,7 @@ header {
         left: 0;
         transition: transform 1s ease-out, visibility 0s;
         visibility: visible;
+        z-index: 99;
         .list-container {
           @include flexContainer(column, space-between);
           gap: 1.5rem;

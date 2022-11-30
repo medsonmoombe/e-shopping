@@ -2,25 +2,184 @@ export const sliderData = [
     {
         img: "https://i.ibb.co/9Th1dsz/the-aw-creative-digital-marketing-Ds-Kc-WDk6-NEU-unsplash.jpg",
         id: 1,
+        title:"women Fashion",
         desc : "Women fashion"
     },
     {
         img: "https://i.ibb.co/yNk4SmJ/kai-gabriel-De-Umcgcf3is-unsplash.jpg",
         id: 2,
+        title:"Men Fashion",
         desc : "Fashion"
     },
     {
         img: "https://i.ibb.co/Gv8B1Dz/mojtaba-fahiminia-t4g1gct-Aa-Kk-unsplash.jpg",
         id: 3,
+        title:"Shoes Fashion",
         desc : "shoes"
     },
     {
         img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
         id: 4,
+        title:"Classic unisex shoes",
         desc : "Shoes"
     },
 ]
  
+export const storeItems = [
+    {
+        img: "https://i.ibb.co/Jk6JN0t/p3.png",
+        id: 1,
+        title:"women Fashion",
+        desc : "Women fashion"
+    },
+    {
+        img: "https://i.ibb.co/yNk4SmJ/kai-gabriel-De-Umcgcf3is-unsplash.jpg",
+        id: 2,
+        title:"Men Fashion",
+        desc : "Fashion"
+    },
+    {
+        img: "https://i.ibb.co/ZYK1Dp1/p3-removebg-preview.png",
+        id: 3,
+        category:"phone",
+        title:"Samsung Phone",
+        desc : "shoes"
+    },
+    {
+        img: "https://i.ibb.co/s5JSPwp/tecno-removebg-preview.png",
+        id: 4,
+        title:"Techno phone",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: "https://i.ibb.co/7n4YYWV/mi-removebg-preview.png",
+        id: 5,
+        title:"Classic unisex shoes",
+        desc : "",
+        category: ""
+    },  
+      {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },  
+      {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+    {
+        img: " https://i.ibb.co/FgbjdV5/ryan-plomp-jvo-Z-Aux9aw-unsplash.jpg",
+        id: 4,
+        title:"Classic unisex shoes",
+        desc : "Shoes",
+        category: ""
+    },
+
+    
+];
 
 
 

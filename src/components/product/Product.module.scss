@@ -1,0 +1,43 @@
+@import "../nav/variables";
+
+.product-container {
+// @include flexContainer(row, center);
+display: flex;
+justify-content: center;
+gap: 5rem;
+border-top: 2px solid #eee;
+.displays {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    .displaysInline {
+        display: flex;
+        gap: 5rem;
+        height: 5rem;
+        border-bottom: 2px solid #eee;
+    }
+    .input-div {
+      input {
+        position: relative;
+        border: 1px solid #eee;
+        padding: 4px;
+        border-radius: 5px;
+        outline: none;
+      }
+      .search {
+        background: $pink-color;
+        padding: 5px;
+        border-radius: 5px;
+        color: #fff;
+        border: 0;
+      }
+    }
+
+    .select {
+        border: 0;
+        background: transparent;
+        outline: none;
+        font-size: 15px;
+    }
+}
+}

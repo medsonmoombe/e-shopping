@@ -1,0 +1,46 @@
+@import "../nav/variables";
+
+.card {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  height: auto;
+  .card-item {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0px 8px 22px 0px #eee;
+    display: flex;
+    flex-direction: column;
+  }
+  .img {
+    width: 180px;
+    height: 200px;
+    padding-bottom: 8px;
+    object-fit: contain;
+    border-bottom: 1px solid #eee;
+  }
+  .para {
+    text-align: center;
+    color: $pink-color;
+    font-weight: 500;
+  }
+
+  .para2 {
+    width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: auto;
+  }
+  .product-btn {
+    padding: 8px;
+    border: 0;
+    color: #fff;
+    background: $pink-color;
+    width: 100%;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
