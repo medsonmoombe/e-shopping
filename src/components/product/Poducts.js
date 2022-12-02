@@ -1,38 +1,61 @@
-// import { useEffect, useState } from "react";
-// import { useDispatch } from "react-redux";
 import Categories from "../category/Categories";
 import styles from "./Product.module.scss";
-import data from "../slider/products.json";
 import ProductItems from "./ProductItems";
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-// import { GET_PRODUCTS } from "../../redux/products";
-// import { collection, getDocs} from "firebase/firestore";
-// import { db } from "../../firebase/config";
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate} from "react-router-dom";
+import { GET_PRODUCTS } from "../../redux/products";
+import { collection, getDocs, snapshotEqual} from "firebase/firestore";
+import { db } from "../../firebase/config";
+import { useDispatch } from "react-redux";
 
 
 
 const Products = () => {
-  // const dispatch = useDispatch();
-  // const [productData, setProductData] = useState([]);
-  // const db2 = collection(db, "users")
+  const dispatch = useDispatch();
+  const [productData, setProductData] = useState([]);
+  const [filterList, setFilterList] = useState(false);
+  const [data, setdata] = useState([])
 
-  const data1 = data.products;
-  const [filterList, setFilterList] = useState(data1);
-  const [setSearch, setSearchTrue] = useState(false);
+
+  const getData = async () => {
+    const querySnapshot = await getDocs(collection(db, "products"));
+    querySnapshot.forEach((doc) => {
+      setProductData((prev)=> {
+        return [...prev, doc.data()]
+      });
+    });
+  }
+
+
+useEffect(()=> {
+  getData()
+  productData.map((item)=> {
+    console.log(item.title);
+    dispatch(GET_PRODUCTS({
+      title:item.title,
+      price:item.price,
+      image:item.image,
+      brand:item.brand,
+      category:item.category,
+      description: item.description,
+      cart: item.cart
+    }))
+  })
+}, [dispatch, productData])
+
+ 
 
   const navigate = useNavigate();
   const location = useLocation();
   const query = new URLSearchParams(location.search);
   const search1 = query.get('search')|| '';
   const finalInput = search1.toLocaleLowerCase();
-  const searchResult = data1.filter((result) => result.category.includes(finalInput));
-
-
+  const searchResult = productData.filter((result) => result.category.includes(finalInput));
 
   const handleFilterInput = (e) => {
+    setFilterList(true)
     let value = e.target.value;
-    const result = data1.filter((data) => {
+    const result = productData.filter((data) => {
       if(value === "less expensive"){
         return data.price < 1000
       }else if(value ==="medium price"){
@@ -41,8 +64,7 @@ const Products = () => {
         return data.price > 1400
       }
     })
-     console.log(result);
-    setFilterList(result); 
+    setdata(result); 
 };
 
   const filterFunction = (e) => {
@@ -51,14 +73,15 @@ const Products = () => {
   };
 
   const filter =(catItem) => {
-    const result = data1.filter((dt) => {
+    setFilterList(true)
+    const result = productData.filter((dt) => {
       return dt.category === catItem;
     })
-    setFilterList(result); 
+    setdata(result);
   }
 
   const allCategories = () => {
-   setFilterList(data1);
+   return setdata(productData);
   }
 
   return (
@@ -69,11 +92,11 @@ const Products = () => {
           <div className={styles.displays}>
             <div className={styles.displaysInline}>
               <div>
-                <p> <span style={{fontWeight:"600"}}>{data1.length}</span> products found</p>
+                <p> <span style={{fontWeight:"600"}}>{filterList ? data.length : productData.length}</span> products found</p>
               </div>
               <div className={styles["input-div"]}>
                 <input type="search" placeholder="search for items"/>
-                <button className={styles.search} type="search" onClick={filterFunction}>
+                <button className={styles.search} type="search" >
                   search
                 </button>
               </div>
@@ -86,7 +109,7 @@ const Products = () => {
                 </select>
               </div>
             </div>
-            <ProductItems data1={filterList}/>
+            <ProductItems data1={ filterList ? data : productData}/>
           </div>
         </section>
       </main>

@@ -6,6 +6,7 @@ import Header from "./components/nav/Header";
 import Login from "./pages/auth/Login";
 import { Register } from "./pages/auth/Register";
 import Reset from "./pages/auth/Reset";
+import Cart from "./pages/cart/Cart";
 import Contact from "./pages/contact/Contact";
 import Home from "./pages/home/Home";
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/login" element={<Login/>}/>
+      <Route path="/cart" element={<Cart/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/reset" element={<Reset/>}/>
     </Routes>

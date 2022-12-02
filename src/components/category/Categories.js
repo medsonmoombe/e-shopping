@@ -27,7 +27,7 @@ const Categories = ({filter, allCategories}) => {
             <VscDebugBreakpointLog size={15} className={styles.catIcon} />
             fragrances
           </li>
-          <li className={styles.filterList}  onClick={()=> filter("skincare")}skincare>
+          <li className={styles.filterList}  onClick={()=> filter("skincare")}>
             <VscDebugBreakpointLog size={15} className={styles.catIcon} />
             skin care
           </li>
