@@ -29,20 +29,9 @@ const Products = () => {
 
 useEffect(()=> {
   getData()
-  productData.map((item)=> {
-    console.log(item.title);
-    dispatch(GET_PRODUCTS({
-      title:item.title,
-      price:item.price,
-      image:item.image,
-      brand:item.brand,
-      category:item.category,
-      description: item.description,
-      cart: item.cart
-    }))
-  })
-}, [dispatch, productData])
+}, [])
 
+  dispatch(GET_PRODUCTS(productData))
  
 
   const navigate = useNavigate();

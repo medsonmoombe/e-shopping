@@ -5,6 +5,8 @@ import { toast } from 'react-toastify';
 import { auth } from "../../firebase/config";
 import styles from "../nav/Header.module.scss";
 
+
+
 export const logout =()=> {
   signOut(auth).then(() => {
   toast.success("Logout successfully..")
@@ -12,19 +14,6 @@ export const logout =()=> {
     toast.error(error.message);
   });
 }
-
-
-const leftNav = (
-    <ul className={styles["left-div"]}>
-      <li className={styles.liStyles}>
-        <Link className={styles["link-logs"]} to="/">
-          Cart
-          <FaShoppingCart size={20} />
-          <p className={styles["cart-num"]}>0</p>
-        </Link>
-      </li>
-    </ul>
-);
 
 const logo = (
   <div className={styles["logo-div"]}>
@@ -38,4 +27,4 @@ const logo = (
 
 
 
-export {logo,leftNav};
+export {logo};

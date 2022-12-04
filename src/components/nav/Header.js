@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, NavLink } from "react-router-dom";
-import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
-import { leftNav, logo, logout } from "../helper/Helper";
+import { FaBars, FaShoppingCart, FaTimes, FaUserCircle } from "react-icons/fa";
+import {  logo, logout } from "../helper/Helper";
 import styles from "./Header.module.scss";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase/config";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SET_ACTIVE_USER, REMOVE_USER } from "../../redux/slice/authSlice";
 import ShowLoginLinks, { ShowLogoutLinks } from "../hiddenLink/hidden";
 
 const Header = () => {
-  // const loggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const itemsInCart = useSelector((state) => state.products.cartItems);
+  const cartNum = itemsInCart.length;
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const [currentUser, setCurrentUser] = useState("");
@@ -125,7 +126,15 @@ const Header = () => {
                 </li>
               </ShowLogoutLinks>
             </ul>
-            {leftNav}
+            <ul className={styles["left-div"]}>
+              <li className={styles.liStyles}>
+                <Link className={styles["link-logs"]} to="/cart">
+                  Cart
+                  <FaShoppingCart size={20} />
+                  <p className={styles["cart-num"]}>{cartNum}</p>
+                </Link>
+              </li>
+            </ul>
           </div>
           <button className={styles.humbBtn}>
             <FaBars size={30} className={styles.humb} onClick={toggleMenu} />

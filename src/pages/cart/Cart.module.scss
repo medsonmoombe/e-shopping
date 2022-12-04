@@ -1,0 +1,21 @@
+@import "../../components/nav/variables";
+
+.cartSection {
+    @include flexContainer(column, center);
+
+    .tableContainer {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        th {
+            border-top: 2px solid $pink-color;
+            border-bottom: 2px solid $pink-color;
+            border-left: 1px solid #eee;
+            border-right: 1px solid #eee;
+            text-align: left;
+            padding: 8px;
+            width: 20rem;
+            margin-bottom: 20rem;
+          }
+    }
+}

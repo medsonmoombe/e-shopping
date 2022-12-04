@@ -17,20 +17,15 @@ const products = createSlice({
   initialState,
   reducers: {
     GET_PRODUCTS : (state, action) => {
-        console.log(action.payload);
-        const { title, brand, image, category, description, cart, price} = action.payload;
-        state.products.brand = brand
-        state.products.category = category
-        state.products.description = description
-        state.products.image = image
-        state.products.title = title
-        state.products.cart = cart
-        state.products.price = price
+      return action.payload
+    },
+    SET_INCART: (state, action) => {
+      state.products.cart = true
     }
   }
 });
 
-export const { GET_PRODUCTS} = products.actions
-export const Products = (state) => state.products;
+export const { GET_PRODUCTS, SET_INCART} = products.actions
+export const productsArr = (state) => state.products.products;
 
 export default products.reducer

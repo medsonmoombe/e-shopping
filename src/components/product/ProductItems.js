@@ -1,12 +1,19 @@
-import { useState } from "react";
-import { NavLink, useParams } from "react-router-dom";
-import Cart from "../../pages/cart/Cart";
+// import { useState } from "react";
+import { addToCart } from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
+import { SET_INCART } from "../../redux/products";
+// import { NavLink, useParams } from "react-router-dom";
+// import Cart from "../../pages/cart/Cart";
 import styles from "./ProductItems.module.scss";
 
+
 const ProductItems = ({ data1 }) => {
-  const [cart, setCart] = useState(false);
-  // const [id, setId] = useState(0);
-  const params = useParams();
+
+  const dispatch = useDispatch();
+
+  const addproduct =(product)=> {
+     dispatch(addToCart(product));
+  }
 
   return (
     <>
@@ -19,12 +26,11 @@ const ProductItems = ({ data1 }) => {
                 <p className={styles.para}>${item.price}</p>
                 <p className={styles.para2}>{item.description}</p>
                 <button
+                  onClick={() => addproduct(item)}
                   className={styles["product-btn"]}
                   id={item.id}
                 >
-                  <a style={{ color: "white" }} href="#">
                     Add to cart
-                  </a>
                 </button>
               </div>
             </div>
