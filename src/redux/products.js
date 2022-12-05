@@ -13,7 +13,7 @@ const initialState = {
 }
 
 const products = createSlice({
-  name: "products",
+  name: "product",
   initialState,
   reducers: {
     GET_PRODUCTS : (state, action) => {

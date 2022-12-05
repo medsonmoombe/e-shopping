@@ -1,0 +1,67 @@
+@import "../nav/variables";
+
+.detailsContainer {
+    @include flexContainer(column, center);
+    width: 80%;
+    height: 100vh;
+    margin: auto;
+    .heading {
+        font-size: 30px;
+        text-align: start !important;
+        padding-bottom: 10rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: #000;
+    }
+    .wrapper {
+        @include flexContainer(row, center);
+        .imgDiv {
+            width: 80%;
+            @include flexContainer(row, center);
+            .img {
+                width: 60%;
+                margin: auto;
+            }
+        }
+        .detailsDiv {
+            @include flexContainer(column, baseline);
+            align-items: baseline;
+            gap: 2rem;
+            padding: 0 1.5rem 0;
+            .h1 {
+                font-size: 25px;
+                color: rgb(102, 98, 98);
+                justify-self: baseline;
+                text-transform: capitalize;
+                font-weight: 600;
+            }
+    
+            .decrp {
+                width: 55%;
+                font-weight: 500;
+                color: rgb(90, 83, 83);
+            }
+    
+            .decrp2 {
+                width: 55%;
+                font-weight: 500;
+                color: $primary-color;
+            }
+    
+            .btn1 {
+                background: $pink-color;
+                padding: 5px;
+                border-radius: 5px;
+                color: #fff;
+                border: 0;
+                width: 50%;
+                cursor: pointer;
+                &:hover {
+                    background: $primary-color;
+                    transition: 1s ease;
+                }
+            }
+    
+        }
+    }
+}
