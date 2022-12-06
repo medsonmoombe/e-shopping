@@ -42,5 +42,9 @@
     width: 100%;
     border-radius: 2px;
     cursor: pointer;
+    &:hover {
+      background: $primary-color;
+      transition: 1s ease;
+  }
   }
 }
