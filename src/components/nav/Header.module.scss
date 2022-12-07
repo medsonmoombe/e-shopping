@@ -169,7 +169,7 @@ header {
         position: relative;
         right: -42px;
         display: block !important;
-        z-index: 99;
+        z-index: 99 !important; 
       }
     }
 }
