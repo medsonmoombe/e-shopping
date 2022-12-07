@@ -31,6 +31,7 @@
 
 @media (max-width: "768px") {
   .category-container {
+    z-index: 3;
    justify-content: center;
    align-items: flex-start;
    width: 100%;
