@@ -19,7 +19,7 @@ const ProductItems = ({ data1 }) => {
 
   return (
     <>
-      <div className={styles.card}>
+      <div className={styles.card} id="product">
         {data1.map((item) => {
           return (
             <div className={styles["card-item"]} key={item.id}>
