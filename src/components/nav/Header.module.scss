@@ -2,6 +2,14 @@
 
 header {
   .nav-bar {
+    .closeDiv {
+      width: 50%;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      height: 100vh;
+      display: none;
+    }
     @include flexContainer(row, space-around);
     background: $primary-color;
     height: 80px;
@@ -39,7 +47,7 @@ header {
         }
         .link-list-active {
           color: #fff;
-          font-size: 15px;
+          font-size: 20px;
           margin: auto;
           text-decoration: underline;
         }
@@ -75,12 +83,25 @@ header {
         color: $pink-color;
       }
     }
+    .closeDiv {
+      width: 50%;
+    }
   }
 
   @media (max-width: 768px) {
+    .nav-bar {
+      .closeDiv {
+        display: block;
+      }
+      position: fixed;
+      width: 100%;
+      z-index: 99;
+    }
       .mobile-div {
         @include flexContainer(column, flex-start);
         gap: 1.5rem;
+        position: fixed;
+        z-index: 99;
         height: 100vh;
         background: $sidebar-color;
         transform: translateX(0);
@@ -100,12 +121,11 @@ header {
           .liStyles {
              border-bottom: 1px solid $pink-color;
              width: 100%;
+            //  gap: 35px;
              @include flexContainer(column, center);
             .link-list {
               color: #fff;
-              font-size: 18px;
-              margin: auto;
-              text-decoration: none;
+              font-size: 20px;
             }
           }
 
@@ -120,6 +140,10 @@ header {
               color: $pink-color;
               margin-top: -15px;
             }
+          }
+          .link-list-active {
+            color: #fff;
+            text-decoration: underline;
           }
         }
         .left-div {
@@ -136,6 +160,7 @@ header {
       .div-nav {
         transition: transform 1s ease-out, visibility 1s;
         opacity: 0;
+        position: fixed;
         transform: translateX(-200%);
         visibility: hidden;
         overflow-x: hidden;

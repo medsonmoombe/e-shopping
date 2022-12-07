@@ -7,6 +7,7 @@ import { GET_PRODUCTS } from "../../redux/products";
 import { collection, getDocs, snapshotEqual} from "firebase/firestore";
 import { db } from "../../firebase/config";
 import { useDispatch } from "react-redux";
+import {Loader} from "../../components/loader/Loader";
 
 
 
@@ -14,13 +15,16 @@ const Products = () => {
   const dispatch = useDispatch();
   const [productData, setProductData] = useState([]);
   const [filterList, setFilterList] = useState(false);
-  const [data, setdata] = useState([])
+  const [data, setdata] = useState([]);
+  const [isloading, setisloading] = useState(false);
 
 
   const getData = async () => {
+    setisloading(true);
     const querySnapshot = await getDocs(collection(db, "products"));
     querySnapshot.forEach((doc) => {
       setProductData((prev)=> {
+        setisloading(false);
         return [...prev, doc.data()]
       });
     });
@@ -76,12 +80,13 @@ useEffect(()=> {
   return (
     <>
       <main>
+        {isloading && <Loader/>}
         <section className={styles["product-container"]}>
           <Categories filter={filter} allCategories={allCategories}/>
           <div className={styles.displays}>
             <div className={styles.displaysInline}>
               <div>
-                <p> <span style={{fontWeight:"600"}}>{filterList ? data.length : productData.length}</span> products found</p>
+                <p> <span style={{fontWeight:"600", fontSize:"12px"}}>{filterList ? data.length : productData.length}</span> products found</p>
               </div>
               <div className={styles["input-div"]}>
                 <input type="search" placeholder="search for items"/>
@@ -89,9 +94,10 @@ useEffect(()=> {
                   search
                 </button>
               </div>
-              <div>
+              <div style={{width:"50%"}}>
                 <span style={{ fontSize: "15px" }}>Sort by:</span>
                 <select className={styles.select} onChange={handleFilterInput}>
+                  <option></option>
                   <option>less expensive</option>
                   <option>medium price</option>
                   <option>high</option>

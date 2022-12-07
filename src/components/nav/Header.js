@@ -59,7 +59,7 @@ const Header = () => {
               showMenu ? `${styles["mobile-div"]}` : `${styles["div-nav"]}`
             }
           >
-            <ul className={styles["list-container"]}>
+            <ul className={styles["list-container"]} onClick={hideMenu}>
               <div className={styles.logoClose}>
                 {logo}{" "}
                 <FaTimes
@@ -92,7 +92,7 @@ const Header = () => {
                   Contact
                 </NavLink>
               </li>
-              <ShowLoginLinks>
+              {/* <ShowLoginLinks>
                 <li className={styles.liStyles}>
                   <NavLink
                     className={({ isActive }) =>
@@ -105,7 +105,7 @@ const Header = () => {
                     OrdersHistory
                   </NavLink>
                 </li>
-              </ShowLoginLinks>
+              </ShowLoginLinks> */}
               <ShowLoginLinks>
                 <li className={styles.liStyles}>
                   <Link to="#">
@@ -122,11 +122,11 @@ const Header = () => {
               </ShowLoginLinks>
               <ShowLogoutLinks>
                 <li className={styles.liStyles}>
-                  <Link to="/login">login</Link>
+                  <Link to="/login" className={styles["link-list"]}>login</Link>
                 </li>
               </ShowLogoutLinks>
             </ul>
-            <ul className={styles["left-div"]}>
+            <ul className={styles["left-div"]} onClick={hideMenu}>
               <li className={styles.liStyles}>
                 <Link className={styles["link-logs"]} to="/cart">
                   Cart
@@ -136,11 +136,11 @@ const Header = () => {
               </li>
             </ul>
           </div>
+          <div className={styles.closeDiv} onClick={hideMenu}></div>
           <button className={styles.humbBtn}>
             <FaBars size={30} className={styles.humb} onClick={toggleMenu} />
           </button>
         </nav>
-        <div onClick={hideMenu}></div>
       </header>
     </>
   );

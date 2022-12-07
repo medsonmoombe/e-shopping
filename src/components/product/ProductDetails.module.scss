@@ -65,3 +65,32 @@
         }
     }
 }
+@media(max-width:"768px") {
+    .detailsContainer {
+        .heading {
+            margin: 0;
+            padding-bottom: 40px;
+            padding-top: 20px;
+        }
+        .wrapper {
+            flex-direction: column;
+            .imgDiv {
+                width: 100%;
+                .img {
+                    width: 100%;
+                }
+            }
+            .detailsDiv {
+                .h1 {
+                    margin-top: 4px;
+                    font-size: 20px;
+                    text-align: center;
+                }
+        
+                .decrp {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

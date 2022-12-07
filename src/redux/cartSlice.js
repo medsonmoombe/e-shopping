@@ -24,7 +24,7 @@ const cartSlice = createSlice({
         // Item already exists in the cart
         // Increase the cartQuantity
         state.cartItems[productIndex].cartQuantity += 1;
-        toast.info(`${action.payload.name} increased by one`, {
+        toast.info(`${action.payload.title} increased by one`, {
           position: "top-left",
         });
       } else {
@@ -32,7 +32,7 @@ const cartSlice = createSlice({
         // Add item to the cart
         const tempProduct = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(tempProduct);
-        toast.success(`${action.payload.name} added to cart`, {
+        toast.success(`${action.payload.title} added to cart`, {
           position: "top-left",
         });
       }
@@ -47,7 +47,7 @@ const cartSlice = createSlice({
 
       if (state.cartItems[productIndex].cartQuantity > 1) {
         state.cartItems[productIndex].cartQuantity -= 1;
-        toast.info(`${action.payload.name} decreased by one`, {
+        toast.info(`${action.payload.title} decreased by one`, {
           position: "top-left",
         });
       } else if (state.cartItems[productIndex].cartQuantity === 1) {
@@ -55,7 +55,7 @@ const cartSlice = createSlice({
           (item) => item.id !== action.payload.id
         );
         state.cartItems = newCartItem;
-        toast.success(`${action.payload.name} removed from cart`, {
+        toast.success(`${action.payload.title} removed from cart`, {
           position: "top-left",
         });
       }
@@ -67,7 +67,7 @@ const cartSlice = createSlice({
       );
 
       state.cartItems = newCartItem;
-      toast.success(`${action.payload.name} removed from cart`, {
+      toast.success(`${action.payload.title} removed from cart`, {
         position: "top-left",
       });
 

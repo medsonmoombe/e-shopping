@@ -48,3 +48,18 @@
   }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin:auto;
+    width: auto;
+    .card-item {
+      width: 170px;
+    }
+    .img {
+      width: 150px;
+    }
+  }
+}

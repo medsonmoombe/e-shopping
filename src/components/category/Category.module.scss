@@ -28,3 +28,26 @@
         }
     }
 }
+
+@media (max-width: "768px") {
+  .category-container {
+   justify-content: center;
+   align-items: flex-start;
+   width: 100%;
+   .listH{
+    @include flexContainer(column, center);
+    align-items: baseline;
+    margin: auto;
+     h2 {
+      
+     }
+     .categoryList {
+       display: flex;
+       flex-wrap: wrap;
+       width: 304px;
+       gap: 4px;
+       margin: auto;
+     }
+   }
+  }
+}

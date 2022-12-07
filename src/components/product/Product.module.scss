@@ -40,4 +40,28 @@ border-top: 2px solid #eee;
         font-size: 15px;
     }
 }
+
+}
+@media (max-width: 768px) {
+  .product-container {
+    display: flex;
+    flex-direction: column !important;
+    padding: 23px 0 3px;
+    width: 100%;
+    .displays {
+      .displaysInline {
+        width: 312px;
+        gap: 3px;
+        margin: auto;
+        flex-direction: column;
+        height: auto;
+      }
+      .input-div {
+        width: 100%;
+        input  {
+          width: 50%;
+        }
+      }
+    }
+  }
 }
