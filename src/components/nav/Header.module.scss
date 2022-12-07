@@ -92,6 +92,7 @@ header {
     .nav-bar {
       .closeDiv {
         display: block;
+        z-index: 4;
       }
       width: 100%;
       z-index: 99;
@@ -168,6 +169,7 @@ header {
         position: relative;
         right: -42px;
         display: block !important;
+        z-index: 99;
       }
     }
 }
